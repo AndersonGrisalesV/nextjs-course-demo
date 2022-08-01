@@ -52,7 +52,7 @@ const HomePage = (props) => {
 //   };
 // }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // fetch data from an API
   const client = await MongoClient.connect(
     "mongodb+srv://our-first-user:LM0E06CsqkKeo9JN@cluster0.la9dh.mongodb.net/meetups?retryWrites=true&w=majority"
@@ -77,7 +77,6 @@ export async function getStaticProps() {
         };
       }),
     },
-    revalidate: 10,
   };
 }
 
